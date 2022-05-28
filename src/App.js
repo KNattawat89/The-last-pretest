@@ -6,6 +6,7 @@ import Menu from './components/MenuComponent';
 import { DISHES } from './shared/dishes';
 
 import Main from './components/MainComponent';
+import Header from './components/HeaderComponent';
 
 class App extends Component {
 
