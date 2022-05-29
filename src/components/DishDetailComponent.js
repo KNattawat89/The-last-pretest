@@ -18,13 +18,11 @@ function renderDish(dish) {
 }
 
 function renderComments(comment) {
-  if(comment != null) {
-    
+    if (comment != null && comment.length > 0)
       return (
         //   console.log(comment)
          <Card>
-            <div className="container">
-            <h4>Comment</h4>
+             <h4>Comments</h4>
         <CardBody>
             {comment.map((c) => { return(
                 <div key={c.id}>
@@ -42,23 +40,14 @@ function renderComments(comment) {
                 
             })}
             </CardBody>
-            {/* <div className="row">
-            <div  className="col-12">
-            {comment.comment}
-            </div>
-            <div  className="col-12">
-            --{comment.author}, {comment.date}
-            </div>
-            </div> */}
-            </div>
          </Card>
       );
+      else
+        return(
+            <div></div>
+        );
   }
-  else
-     return(
-         <div></div>
-     )
- }
+ 
 
 const DishDetail = ({detail, comments}) => {
     return (
