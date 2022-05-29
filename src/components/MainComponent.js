@@ -46,7 +46,7 @@ class Main extends Component {
         <Header />
         <Switch>
               <Route path='/home' component={HomePage} />
-              <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)} />} />
+              <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} selectedDish={this.state.selectedDish} onClick={(dishId) => this.onDishSelect(dishId)} comments={this.state.comments.filter((e1) => (e1.dishId === this.state.selectedDish))} />} />
               <Route exact path='/contactus' component={Contact} />
               <Redirect to="/home" />
           </Switch>
